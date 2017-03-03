@@ -1,0 +1,9 @@
+com\jfinal\controller\Urlcontroller.class
+com\jfinal\service\FileQueryService.class
+com\jfinal\service\CmdService.class
+com\jfinal\service\test.class
+com\jfinal\service\AddFileService.class
+com\jfinal\config\JfinalConfig.class
+com\jfinal\config\UrlConfig.class
+com\jfinal\controller\JfinalController.class
+com\jfinal\service\CompilerControl.class

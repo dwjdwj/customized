@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>更新代码</title>
+    <meta name="author" content="Fabian Jakobs">
+    <link href="./doc/site/images/favicon.ico" rel="icon" type="image/x-icon">
+    
+      <link rel="stylesheet" href="style/styles.css" type="text/css" media="screen" charset="utf-8">
+      <script async="true" src="http://use.edgefonts.net/source-code-pro.js"></script>
+    
+</head>
+<body>
+<div id="optionsPanel" style="position:absolute;height:100%;width:260px">
+  <a href="http://ajaxorg.github.com/ace/" >
+    <img id="logo" src="kitchen-sink/logo.png">
+  </a>
+  <div style="position: absolute; overflow: hidden; top:80px; bottom:0">
+  <div style="width: 120%; height:100%; overflow-y: scroll">
+
+  <table id="controls">
+    <tr>
+      <td>
+        <label for="doc">代码类型</label>
+      </td><td>
+        <select id="doc" size="1">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="mode">编码模式</label>
+      </td><td>
+        <select id="mode" size="1">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="split">窗体分割</label>
+      </td><td>
+        <select id="split" size="1">
+          <option value="none">默认</option>
+          <option value="below">上下分割</option>
+          <option value="beside">左右分割</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="theme">定义主题</label>
+      </td><td>
+        <select id="theme" size="1">
+          <optgroup label="主题选择">
+            <option value="ace/theme/chrome">谷歌浏览器主题</option>
+            <option value="ace/theme/crimson_editor">专业编辑器主题</option> 
+            <option value="ace/theme/dreamweaver">DW主题</option>
+            <option value="ace/theme/eclipse">Eclipse主题</option>
+         
+          </optgroup>
+          <optgroup label="背景颜色">
+            <option value="ace/theme/ambiance">黑色</option>
+            <option value="ace/theme/cobalt">蓝色</option>
+            <option value="ace/theme/idle_fingers">红棕色</option>
+            <option value="ace/theme/kr_theme">黑白色</option>
+            <option value="ace/theme/merbivore">黑红色</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="fontsize">字体大小</label>
+      </td><td>
+        <select id="fontsize" size="1">
+          <option value="10px">10px</option>
+          <option value="11px">11px</option>
+          <option value="12px" selected="selected">12px</option>
+          <option value="13px">13px</option>
+          <option value="14px">14px</option>
+          <option value="16px">16px</option>
+          <option value="18px">18px</option>
+          <option value="20px">20px</option>
+          <option value="24px">24px</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="folding">代码折叠</label>
+      </td><td>
+        <select id="folding" size="1">
+          <option value="manual">无折叠</option>
+          <option value="markbegin" selected="selected">手动折叠</option>
+      
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="keybinding">键位设置</label>
+      </td><td>
+        <select id="keybinding" size="1">
+          <option value="ace">默认</option>
+          
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="soft_wrap">界面控制</label>
+      </td><td>
+        <select id="soft_wrap" size="1">
+          <option value="off">默认</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr><td colspan="2">
+    <table id="more-controls">
+    <tr>
+      <td>
+        <label for="select_style">选择全部</label>
+      </td><td>
+        <input type="checkbox" name="select_style" id="select_style" checked>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="highlight_active">选择一行</label>
+      </td><td>
+        <input type="checkbox" name="highlight_active" id="highlight_active" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_hidden">补全空格</label>
+      </td><td>
+        <input type="checkbox" name="show_hidden" id="show_hidden" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="display_indent_guides">显示缩进</label>
+      </td><td>
+        <input type="checkbox" name="display_indent_guides" id="display_indent_guides" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_hscroll">动画滚动</label>
+      </td><td>
+        <input type="checkbox" name="show_hscroll" id="show_hscroll">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="animate_scroll"></label>
+      </td><td>
+        <input hidden="hidden" type="checkbox" name="animate_scroll" id="animate_scroll">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_gutter">显示序号</label>
+      </td><td>
+        <input type="checkbox" id="show_gutter" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="show_print_margin"></label>
+      </td><td>
+        <input hidden="hidden"type="checkbox" id="show_print_margin" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="soft_tab"></label>
+      </td><td>
+        <input hidden="hidden" type="checkbox" id="soft_tab" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="highlight_selected_word"></label>
+      </td>
+      <td>
+        <input hidden="hidden" type="checkbox" id="highlight_selected_word" checked>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="enable_behaviours"></label>
+      </td>
+      <td>
+        <input hidden="hidden" type="checkbox" id="enable_behaviours">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="fade_fold_widgets"></label>
+      </td>
+      <td>
+        <input hidden="hidden" type="checkbox" id="fade_fold_widgets">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="elastic_tabstops"></label>
+      </td>
+      <td>
+        <input hidden="hidden" type="checkbox" id="elastic_tabstops">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="isearch"></label>
+      </td>
+      <td>
+        <input hidden="hidden"type="checkbox" id="isearch">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="highlight_token"></label>
+      </td>
+      <td>
+        <input hidden="hidden"type="checkbox" id="highlight_token">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="read_only"></label>
+      </td>
+      <td>
+        <input hidden="hidden"type="checkbox" id="read_only">
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <label for="scrollPastEnd"></label>
+      </td>
+      <td>
+        <input hidden="hidden" type="checkbox" id="scrollPastEnd" checked>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+      <form name="ww">
+      <span>输入类名：<input type="text" value="" name="classname" id="classname" class="class-name"></span>
+        <!-- <input type="button" value="编辑" onclick="env.editSnippets()"> -->
+        <input type="button" value="提交" onclick="env.add()"></form>
+      </td>
+    </tr>
+  </table>
+  </td></tr>
+  </table>
+
+  </div>
+  </div>
+</div>
+  <div id="editor-container"></div>
+  <script src="src/ace.js" data-ace-base="src" type="text/javascript" charset="utf-8"></script>
+  <!-- <script src="src/keybinding-vim.js"></script>
+  <script src="src/keybinding-emacs.js"></script> -->
+  <script src="kitchen-sink/demo.js"></script>
+ <!--  <script src="kitchen-sink/jquery.backstretch.min.js"></script> -->
+  <script src="kitchen-sink/jquery.min.js"></script>
+  <script src="kitchen-sink/jquery-ui.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    require("kitchen-sink/demo");
+  </script>
+  
+ 
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="${base}/style/styles/choice.css">
+<script src="kitchen-sink/jquery.min.js"></script>
+<script src="kitchen-sink/jquery-ui.min.js"></script>
+<script src="js/Choice.js"></script>
+<meta charset="UTF-8">
+<title>文件选择</title>
+</head>
+<body class="body">
+
+
+<div class="divcss1">
+<h3>选择要编译的文件</h3>
+	<form action="ss" method="get" class="from">
+		<#list 0..Filelist?size-1 as t> <label> <input name="Fruit"
+			id='${t}' type="checkbox" value="${Filelist[t]}" />${Filelist[t]}
+		</label> 
+		</#list> <br><br><br>
+		输入打包后的Jar包名：<br><input type="text" value="" name ="jarname" id="jarname" />
+		 <br><br>
+		<input type="button" onclick="myRegister()" value="编译打包" />
+	</form>
+</div>
+
+	<!-- 循环输出文件值 -->
+<div class="divcss2">
+<H3>已确定编译文件</H3>
+	<form action="ss" method="get" class="from">
+		<#list 0..Filelistrun?size-1 as t> 
+		<label> <input name="Fruit" id='${t}' type="checkbox" value="${Filelistrun[t]}" />${Filelistrun[t]}
+		</label> 
+		</#list> <br><br><br><br><br>
+				<input type="button" onclick="RegisterRun()" value="移除文件" />
+	</form>
+	</div>	
+<div class="divcss3">
+	<H3>已完成的jar包</H3>
+	<form action="ss" method="get" class="from">
+		<#list 0..FilelistJar?size-1 as t> 
+		<label> <input name="radio"
+			id='${t}' type="radio" value="${FilelistJar[t]}" />${FilelistJar[t]}
+		</label> 
+		</#list> 
+	</form>
+	</div>	
+	<div class="divcss4">
+	<H3>选择更新文件(单选)</H3>
+	<form action="ss" method="get" class="from">
+		<#list 0..Filelist?size-1 as t> 
+		<label> <input name="radio"
+			id='${t}' type="radio" value="${Filelist[t]}" />${Filelist[t]}
+		</label> 
+		</#list> 
+		<input type="button" onclick="Registerup()" value="编辑" />
+	</form>
+	</div>
+	
+	
+	
+	
+	
+<script type="text/javascript">
+
+ function Registerup(){
+console.log("--------我是更新文件---------------")
+var radiofilename =$('input:radio[name="radio"]:checked').val();
+console.log(radiofilename);
+
+ $.ajax({
+     url: "/Customized/moveFile",
+    type: "post",
+    data : {
+		"radiofilename" : radiofilename,
+	},
+    success: function (data) {
+    
+    	var re=data.content;
+    	console.log(re)
+    	if(re!=null){
+    	
+    	 window.location.href = '../Customized/editor'}
+    	else{
+
+    	 window.location.href = '../Customized/editor'
+    }
+}); }
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+/*整体框架*/
+.frame { /* background: #fff; */
+	font-family: 'lucida grande', tahoma, helvetica, arial,
+		'bitstream vera sans', sans-serif;
+	/* font-size: 12px; */
+	/* text-align: left; */
+	line-height: 20px;
+	margin-top: -120px;
+	float: left;
+	margin-left: -150px;
+}
+/*常用 float 布局*/
+.l {
+	float: left;
+}
+
+.r {
+	float: right;
+	clear: right;
+}
+
+.c {
+	clear: both;
+}
+
+/* 输入框 */
+.inputContent {
+	cursor: text;
+	height: 23px;
+	width: 215px;
+}
+
+/*下拉框顶部区域*/
+.groupMenu {
+
+	height: 20px;
+	border-bottom: 1px solid #eee;
+	padding: 2px 5px;
+	color: #000;
+	background: #F2F6FB;
+}
+
+/* 选择框外框 */
+.it_s {
+	display: table;
+	border: 1px solid #808080;
+	width: 700px;
+}
+
+/* 选择框底色 */
+.it1, .it2 {
+	background: #fff;
+	border: 1px solid #fff;
+	color: #333;
+}
+
+/*-- suggest 选项 --*/
+.sgt_on {
+	width: 200px;
+	height: 20px;
+	border-bottom: 1px solid #eee;
+	padding: 2px 5px;
+	color: #000;
+	background: #F2F6FB;
+}
+
+.sgt_of, .sgt_3 {
+	width: 200px;
+	height: 20px;
+	border-bottom: 1px solid #eee;
+    padding: 6px 10px;
+	color: #666;
+	background: #fff;
+}
+/*每3个选项一行*/
+.sgt_3 {
+width: 100%;
+}
+/*单个选项*/
+.itemW {
+	width: 100px;
+}
+/*suggest 关闭选项*/
+.itemC {
+	width: 190px;
+}
+
+/*下拉框架*/
+.flow {
+	float: right;
+	padding: 3px 2px 0 0;
+	position: relative;
+	margin: 3px 2px 0 0;
+}
+
+/*下拉点击图片*/
+.cp {
+	cursor: pointer;
+}
+
+/*下拉窗口*/
+.popMenu {
+	    width: 700px;
+    position: absolute;
+    display: none;
+    top: 25px;
+    /* right: -1px; */
+    background: #fff;
+    border: 1px solid #a498c8;
+    padding: 2px;
+    margin-left: -682px;
+    margin-top: 60px;
+}
+
+/*下拉框中部区域(子选项)*/
+.items {
+
+    height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/*下拉框低部区域(按钮)*/
+.buttonsMenu {
+	/* text-align: center;
+	padding: 5px; */
+}
+
+/*按钮区域*/
+.buttonsDiv {
+	border: 1px solid #e2e2e2;
+	float: left;
+}
+
+/*按钮*/
+.gb1{
+/* 	height: 23px;
+	color: #333;
+	font-size: 12px;
+	background: #e5e5e5;
+	padding: 3px 5px;
+	border-left: 1px solid #fff;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #6a6a6a;
+	border-bottom: 1px solid #6a6a6a;
+	cursor: pointer; */
+	margin-left: 600px;
+}
+/* .gb2 {
+	height: 23px;
+	color: #333;
+	font-size: 12px;
+	background: #e5e5e5;
+	padding: 3px 5px;
+	border-left: 1px solid #fff;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #6a6a6a;
+	border-bottom: 1px solid #6a6a6a;
+	cursor: pointer;
+	    float: right;
+    margin-left: 640px;
+} */
+
+/*移出*/
+.gb2 {
+	background: #ddd;
+}
+
+/*选项 */
+.selItem {
+	float: left;
+	background: #E0E5EE;
+	margin: 1px 5px 1px 0;
+	padding: 0 5px;
+}
+
+/*输入和备选区域*/
+.activeDiv {
+	float: left;
+	width: 10px;
+	position: relative;
+	width: 50px;
+}
+
+/*动态输入框*/
+.actText {
+	width: 10px;
+	height: 16px;
+	font-size: 12px;
+	line-height: 19px;
+	border: 0;
+}
+
+/*供选择框*/
+.suggest, .emptySuggest {
+	width: 210px;
+	position: absolute;
+	left: -1px;
+	top: 25px;
+	background: #fff;
+	border: 1px solid #98B1C8;
+	border-right: 3px solid #7f7f7f;
+	border-bottom: 3px solid #7f7f7f;
+	padding: 2px;
+}
+/*提示输入信息*/
+.emptySuggest {
+	padding-left: 7px;
+	background: #eeeeee;
+	color: #666666;
+	width: 220px;
+}
